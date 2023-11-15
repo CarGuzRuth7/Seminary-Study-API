@@ -1,0 +1,362 @@
+{
+    "scripture1": 
+      {
+        "book": "Jeremiah",
+        "chapter": 17,
+        "verse(s)": "7",
+        "scripture": "Blessed is the man that trusteth in the Lord, and whose hope the Lord is.",
+        "theme": "Hope"
+      },
+      "scripture2": 
+      {
+        "book": "Joel",
+        "chapter": 3,
+        "verse(s)": "16",
+        "scripture": "The Lord also shall roar out of Zion, and utter his voice from Jerusalem; and the heavens and the earth shall shake: but the Lord will be the hope of his people, and the strength of the children of Israel.",
+        "theme": "Hope"
+      },
+      "scripture3": 
+      {
+        "book": "Psalm",
+        "chapter": 34,
+        "verse(s)": "4",
+        "scripture": "I sought the Lord, and he heard me, and delivered me from all my fears.",
+        "theme": "Hope"
+      },
+      "scripture4": 
+      {
+        "book": "Romans",
+        "chapter": 15,
+        "verse(s)": "13",
+        "scripture": "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.",
+        "theme": "Hope"
+      },
+      "scripture5": 
+      {
+        "book": "Alma",
+        "chapter": 36,
+        "verse(s)": "3",
+        "scripture": "And now, O my son Helaman, behold, thou art in thy youth, and therefore, I beseech of thee that thou wilt hear my words and learn of me; for I do know that whosoever shall put their trust in God shall be supported in their trials, and their troubles, and their afflictions, and shall be lifted up at the last day.",
+        "theme": "Hope"
+      },
+      "scripture6": 
+      {
+        "book": "Ether",
+        "chapter": 12,
+        "verse(s)": "4",
+        "scripture": "Wherefore, whose believeth in God might with surety hope for a better world, yea, even a place at the right hand of God, which hope cometh of faith, maketh an anchor to the souls of men, which would make them sure and steadfast, always abounding in good works, being led to glorify God.",
+        "theme": "Hope"
+      },
+      "scripture7": 
+      {
+        "book": "Matthew",
+        "chapter": 11,
+        "verse(s)": "28-30",
+        "scripture": "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.",
+        "theme": "Hope"
+      },
+      "scripture8": 
+      {
+        "book": "John",
+        "chapter": 14,
+        "verse(s)": "27",
+        "scripture": "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.",
+        "theme": "Hope"
+      },
+      "scripture9": 
+      {
+        "book": "1 John",
+        "chapter": 3,
+        "verse(s)": "2-3",
+        "scripture": "Beloved, now are we the sons of God, and it doth not yet appear what we shall be: but we know that, when he shall appear, we shall be like him; for we shall see him as he is. And every man that hath this hope in him purifieth himself, even as he is pure.",
+        "theme": "Hope"
+      },
+      "scripture10": 
+      {
+        "book": "2 Nephi",
+        "chapter": 31,
+        "verse(s)": "20",
+        "scripture": "Wherefore, ye must press forward with a steadfastness in Christ, having a perfect brightness of hope, and a love of God and of all men. Wherefore, if ye shall press forward, feasting upon the word of Christ, and endure to the end, behold, thus saith the Father: Ye shall have eternal life.",
+        "theme": "Hope"
+      },
+      "scripture11": 
+      {
+        "book": "Ether",
+        "chapter": 12,
+        "verse(s)": "32",
+        "scripture": "And I also remember that thou hast said that thou hast prepared a house for man, yea, even among the mansions of thy Father, in which man might have a more excellent hope; wherefore man must hope, or he cannot receive an inheritance in the place which thou hast prepared.",
+        "theme": "Hope"
+      },
+      "scripture12": 
+      {
+        "book": "1 Peter",
+        "chapter": 1,
+        "verse(s)": "3",
+        "scripture": "Blessed be the God and Father of our Lord Jesus Christ, which according to his abundant mercy hath begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead.",
+        "theme": "Hope"
+      },
+      "scripture13": 
+      {
+        "book": "Alma",
+        "chapter": 40,
+        "verse(s)": "23",
+        "scripture": "The soul shall be restored to the body, and the body to the soul; yea, and every limb and joint shall be restored to its body; yea, even a hair of the head shall not be lost; but all things shall be restored to their proper and perfect frame.",
+        "theme": "Hope"
+      },
+      "scripture14": 
+      {
+        "book": "Moroni",
+        "chapter": 7,
+        "verse(s)": "41",
+        "scripture": "And what is it that ye shall hope for? Behold I say unto you that ye shall have hope through the atonement of Christ and the power of his resurrection, to be raised unto life eternal, and this because of your faith in him according to the promise.",
+        "theme": "Hope"
+      },
+      "scripture15": 
+      {
+        "book": "1 Corinthians",
+        "chapter": 13,
+        "verse(s)": "13",
+        "scripture":"And now abideth faith, hope, charity these three; but the greatest of these is charity.",
+        "theme": "Hope"
+      },
+      "scripture16": 
+      {
+        "book": "Hebrews",
+        "chapter": 11,
+        "verse(s)": "1",
+        "scripture": "Now faith is the substance of things hoped for, the evidence of things not seen.",
+        "theme": "Hope"
+      },
+      "scripture17": 
+      {
+        "book": "Alma",
+        "chapter": 32,
+        "verse(s)": "21",
+        "scripture": "And now as I said concerning faith-faith is not to have a perfect knowledge of things; therefore if ye have faith ye hope for things which are not seen, which are true.",
+        "theme": "Hope"
+      },
+      "scripture18": 
+      {
+        "book": "Moroni",
+        "chapter": 7,
+        "verse(s)": "40",
+        "scripture": "And again, my beloved brethren, I would speak unto you concerning hope. How is it that ye can attain unto faith, save ye shall have hope?",
+        "theme": "Hope"
+      },
+      "scripture19": 
+      {
+        "book": "Moroni",
+        "chapter": 7,
+        "verse(s)": "42-43",
+        "scripture": "Wherefore, if a man have faith he must needs have hope; for without faith there cannot be any hope. And again, behold I say unto you that he cannot have faith and hope, save he shall be meek, and lowly of heart.",
+        "theme": "Hope"
+      },
+      "scripture20": 
+      {
+        "book": "Moroni",
+        "chapter": 10,
+        "verse(s)": "20",
+        "scripture": "Wherefore, there must be faith; and if there must be faith there must also be hope; and if there must be hope there must also be charity.",
+        "theme": "Hope"
+      },
+      "scripture21": 
+      {
+        "book": "Deuteronomy",
+        "chapter": 7,
+        "verse(s)": "9",
+        "scripture": "Know therefore that the Lord thy God, he is God, the faithful God, which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations.",
+        "theme": "Faith"
+      },
+      "scripture22": 
+      {
+        "book": "1 Timothy",
+        "chapter": 1,
+        "verse(s)": "14",
+        "scripture": "And the grace of our Lord was exceeding abundant with faith and love which is in Christ Jesus.",
+        "theme": "Faith"
+      },
+      "scripture23": 
+      {
+        "book": "1 Corinthians",
+        "chapter": 10,
+        "verse(s)": "13",
+        "scripture": "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it.",
+        "theme": "Faith"
+      },
+      "scripture24": 
+      {
+        "book": "Hebrews",
+        "chapter": 11,
+        "verse(s)": "1",
+        "scripture": "Now faith is the substance of things hoped for, the evidence of things not seen.",
+        "theme": "Faith"
+      },
+      "scripture25": 
+      {
+        "book": "Alma",
+        "chapter": 32,
+        "verse(s)": "21",
+        "scripture": "And now as I said concerning faith—faith is not to have a perfect knowledge of things; therefore if ye have faith ye hope for things which are not seen, which are true.",
+        "theme": "Faith"
+      },
+      "scripture26": 
+      {
+        "book": "Ether",
+        "chapter": 12,
+        "verse(s)": "6",
+        "scripture": "And now, I, Moroni, would speak somewhat concerning these things; I would show unto the world that faith is things which are hoped for and not seen; wherefore, dispute not because ye see not, for ye receive no witness until after the trial of your faith.",
+        "theme": "Faith"
+      },
+      "scripture27": 
+      {
+        "book": "Romans",
+        "chapter": 10,
+        "verse(s)": "17",
+        "scripture": "So then faith cometh by hearing, and hearing by the word of God.",
+        "theme": "Faith"
+      },
+      "scripture28": 
+      {
+        "book": "Ether",
+        "chapter": 12,
+        "verse(s)": "12",
+        "scripture": "For if there be no faith among the children of men God can do no miracle among them; wherefore, he showed not himself until after their faith.",
+        "theme": "Faith"
+      },
+      "scripture29": 
+      {
+        "book": "Moroni",
+        "chapter": 10,
+        "verse(s)": "20",
+        "scripture": "Wherefore, there must be faith; and if there must be faith there must also be hope; and if there must be hope there must also be charity.",
+        "theme": "Faith"
+      },
+      "scripture30": 
+      {
+        "book": "Moroni",
+        "chapter": 10,
+        "verse(s)": "23",
+        "scripture": "And Christ truly said unto our fathers: If ye have faith ye can do all things which are expedient unto me.",
+        "theme": "Faith"
+      },
+      "scripture31": 
+      {
+        "book": "Hebrews",
+        "chapter": 11,
+        "verse(s)": "6",
+        "scripture": "But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him.",
+        "theme": "Faith"
+      },
+      "scripture32": 
+      {
+        "book": "Alma",
+        "chapter": 44,
+        "verse(s)": "4",
+        "scripture": "Now ye see that this is the true faith of God; yea, ye see that God will support, and keep, and preserve us, so long as we are faithful unto him, and unto our faith, and our religion; and never will the Lord suffer that we shall be destroyed except we should fall into transgression and deny our faith.",
+        "theme": "Faith"
+      },
+      "scripture33": 
+      {
+        "book": "Matthew",
+        "chapter": 25,
+        "verse(s)": "21",
+        "scripture": "His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.",
+        "theme": "Faith"
+      },
+      "scripture34": 
+      {
+        "book": "Proverbs",
+        "chapter": 28,
+        "verse(s)": "20",
+        "scripture": "A faithful man shall abound with blessings: but he that maketh haste to be rich shall not be innocent.",
+        "theme": "Faith"
+      },
+      "scripture35": 
+      {
+        "book": "Psalm",
+        "chapter": 31,
+        "verse(s)": "23",
+        "scripture": "O love the Lord, all ye his saints: for the Lord preserveth the faithful, and plentifully rewardeth the proud doer.",
+        "theme": "Faith"
+      },
+      "scripture36": 
+      {
+        "book": "James",
+        "chapter": 1,
+        "verse(s)": "3",
+        "scripture": "Knowing this, that the trying of your faith worketh patience.",
+        "theme": "Faith"
+      },
+      "scripture37": 
+      {
+        "book": "James",
+        "chapter": 5,
+        "verse(s)": "15",
+        "scripture": "And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him.",
+        "theme": "Faith"
+      },
+      "scripture38": 
+      {
+        "book": "1 John",
+        "chapter": 5,
+        "verse(s)": "4",
+        "scripture": "For whatsoever is born of God overcometh the world: and this is the victory that overcometh the world, even our faith.",
+        "theme": "Faith"
+      },
+      "scripture39": 
+      {
+        "book": "Mosiah",
+        "chapter": 8,
+        "verse(s)": "18",
+        "scripture": "Thus God has provided a means that man, through faith, might work mighty miracles; therefore he becometh a great benefit to his fellow beings.",
+        "theme": "Faith"
+      },
+      "scripture40": 
+      {
+        "book": "Mosiah",
+        "chapter": 2,
+        "verse(s)": "41",
+        "scripture": "And moreover, I would desire that ye should consider on the blessed and happy state of those that keep the commandments of God. For behold, they are blessed in all things, both temporal and spiritual; and if they hold out faithful to the end they are received into heaven, that thereby they may dwell with God in a state of never-ending happiness. O remember, remember that these things are true; for the Lord God hath spoken it.",
+        "theme": "Faith"
+      },
+      "scripture41": 
+      {
+        "book": "1 Nephi",
+        "chapter": 11,
+        "verse(s)": "17",
+        "scripture": "And I said unto him: I know that he loveth his children; nevertheless, I do not know the meaning of all things.",
+        "theme": "Endure"
+      },
+      "scripture42": 
+      {
+        "book": "Moses",
+        "chapter": 7,
+        "verse(s)": "26-33",
+        "scripture": "And he beheld Satan; and he had a great chain in his hand, and it veiled the whole face of the earth with darkness; and he looked up and laughed, and his angels rejoiced. And Enoch beheld angels descending out of heaven, bearing testimony of the Father and Son; and the Holy Ghost fell on many, and they were caught up by the powers of heaven into Zion. And it came to pass that the God of heaven looked upon the residue of the people, and he wept; and Enoch bore record of it, saying: How is it that the heavens weep, and shed forth their tears as the rain upon the mountains? And Enoch said unto the Lord: How is it that thou canst weep, seeing thou art holy, and from all eternity to all eternity? And were it possible that man could number the particles of the earth, yea, millions of earths like this, it would not be a beginning to the number of thy creations; and thy curtains are stretched out still; and yet thou art there, and thy bosom is there; and also thou art just; thou art merciful and kind forever; And thou hast taken Zion to thine own bosom, from all thy creations, from all eternity to all eternity; and naught but peace, justice, and truth is the habitation of thy throne; and mercy shall go before thy face and have no end; how is it thou canst weep? The Lord said unto Enoch: Behold these thy brethren; they are the workmanship of mine own hands, and I gave unto them their knowledge, in the day I created them; and in the Garden of Eden, gave I unto man his agency; And unto thy brethren have I said, and also given commandment, that they should love one another, and that they should choose me, their Father; but behold, they are without affection, and they hate their own blood;",
+        "theme": "Endure"
+      },
+      "scripture43": 
+      {
+        "book": "Alma",
+        "chapter": 14,
+        "verse(s)": "13",
+        "scripture": "And Alma said: Be it according to the will of the Lord. But, behold, our work is not finished; therefore they burn us not.",
+        "theme": "Endure"
+      },
+      "scripture44": 
+      {
+        "book": "Alma",
+        "chapter": 7,
+        "verse(s)": "11-12",
+        "scripture": "And he shall go forth, suffering pains and afflictions and temptations of every kind; and this that the word might be fulfilled which saith he will take upon him the pains and the sicknesses of his people. And he will take upon him death, that he may loose the bands of death which bind his people; and he will take upon him their infirmities, that his bowels may be filled with mercy, according to the flesh, that he may know according to the flesh how to succor his people according to their infirmities.",
+        "theme": "Endure"
+      },
+      "scripture45": 
+      {
+        "book": "Doctrine and Covenants",
+        "chapter": 101,
+        "verse(s)": "32-36",
+        "scripture": "Yea, verily I say unto you, in that day when the Lord shall come, he shall reveal all things— Things which have passed, and hidden things which no man knew, things of the earth, by which it was made, and the purpose and the end thereof— Things most precious, things that are above, and things that are beneath, things that are in the earth, and upon the earth, and in heaven. And all they who suffer persecution for my name, and endure in faith, though they are called to lay down their lives for my sake yet shall they partake of all this glory. Wherefore, fear not even unto death; for in this world your joy is not full, but in me your joy is full.",
+        "theme": "Endure"
+      }
+  }
