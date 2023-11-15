@@ -1,4 +1,4 @@
-//Type Definition Schemas 
+//Type Definition Schemas
 
 const typeDefs = `#graphql
     type Query {
@@ -7,4 +7,4 @@ const typeDefs = `#graphql
     }
 `;
 
-module.exports = typeDefs
+module.exports = typeDefs;

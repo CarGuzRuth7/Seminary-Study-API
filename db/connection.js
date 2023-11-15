@@ -9,7 +9,7 @@ let db;
 
 // initialize the  connection
 async function initDb(callback) {
-  // check if the 'db' variable is already set 
+  // check if the 'db' variable is already set
   if (db) {
     console.log("Database is already initialized!");
     return callback(null, db);
@@ -17,7 +17,7 @@ async function initDb(callback) {
 
   try {
     const client = await MongoClient.connect(process.env.MONGODB_URI);
-    // stores the connection 
+    // stores the connection
     db = client;
     callback(null, db);
   } catch (err) {
@@ -28,7 +28,7 @@ async function initDb(callback) {
 
 // get the db connection
 function getDb() {
-  // check if the db variable is not set 
+  // check if the db variable is not set
   if (!db) {
     // error indicating that the database is not initialized
     throw new Error("Database not initialized");
@@ -39,5 +39,5 @@ function getDb() {
 
 module.exports = {
   initDb,
-  getDb,
+  getDb
 };
