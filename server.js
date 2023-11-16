@@ -9,7 +9,7 @@ const resolvers = require("./schemas/resolvers"); //for the Apollo Server
 
 //Start Apollo Server and GraphQL at /graphql
 async function startServer() {
-  const plugins = [ ApolloServerPluginLandingPageProductionDefault({embed: true})];
+  const plugins = [ ApolloServerPluginLandingPageProductionDefault({embed: true, persistedQueries: false})];
   const app = express();
   const apolloServer = new ApolloServer({
     typeDefs,
