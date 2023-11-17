@@ -1,0 +1,86 @@
+[
+    {
+        "challengeName": "Daily Scripture Reading",
+        "description": "Read a chapter from the scriptures every day for a week",
+        "difficulty": "Beginner",
+        "points": 50
+    },
+    {
+        "challengeName": "Scripture Study Marathon",
+        "description": "Read an entire book",
+        "difficulty": "Advanced",
+        "points": 350
+    },
+    {
+        "challengeName": "Doctrinal Essay Writing",
+        "description": "Write an essay on a doctrinal topic",
+        "difficulty": "Intermediate",
+        "points": 250
+    },
+    {
+        "challengeName": "Weekly Scripture Memorization",
+        "description": "Memorize and recite a verse each week",
+        "difficulty": "Intermediate",
+        "points": 80
+    },
+    {
+        "challengeName": "Interactive Scripture Discussion",
+        "description": "Participate in a group scripture discussion",
+        "difficulty": "Intermediate",
+        "points": 120
+    },
+    {
+        "challengeName": "Scripture Crossword Challenge",
+        "description": "Complete a scripture-themed crossword puzzle",
+        "difficulty": "Beginner",
+        "points": 60
+    },
+    {
+        "challengeName": "Character Study",
+        "description": "In-depth study on a scripture character",
+        "difficulty": "Advanced",
+        "points": 250
+    },
+    {
+        "challengeName": "Daily Verse Reflection",
+        "description": "Reflect on and share a scripture verse daily",
+        "difficulty": "Intermediate",
+        "points": 90
+    },
+    {
+        "challengeName": "Book of Mormon Challenge",
+        "description": "Read the entire Book of Mormon",
+        "difficulty": "Advanced",
+        "points": 400
+    },
+    {
+        "challengeName": "Monthly Doctrinal Challenge",
+        "description": "Monthly challenge on a doctrinal topic",
+        "difficulty": "Intermediate",
+        "points": 180
+    },
+    {
+        "challengeName": "Scripture Art Creation",
+        "description": "Create artwork inspired by scripture",
+        "difficulty": "Intermediate",
+        "points": 220
+    },
+    {
+        "challengeName": "Historical Context Research",
+        "description": "Research historical context of a scripture story",
+        "difficulty": "Intermediate",
+        "points": 130
+    },
+    {
+        "challengeName": "Scripture Translation Challenge",
+        "description": "Translate a scripture passage to a different language",
+        "difficulty": "Intermediate",
+        "points": 110
+    },
+    {
+        "challengeName": "Quotable Quotes",
+        "description": "Find and share a meaningful scripture quote daily",
+        "difficulty": "Beginner",
+        "points": 70
+    }
+]
