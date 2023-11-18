@@ -2,6 +2,11 @@ const express = require("express");
 var cors = require("cors");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
+const {
+  ApolloServerPluginLandingPageLocalDefault,
+
+  ApolloServerPluginLandingPageProductionDefault
+} = require("@apollo/server/plugin/landingPage/default");
 const port = process.env.PORT || 3000;
 const { initDb } = require("./db/connection"); //importing database connection function
 const typeDefs = require("./schemas/typeDefs"); //importing types definitions and resolvers
@@ -12,7 +17,12 @@ async function startServer() {
   const app = express();
   const apolloServer = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    plugins: [
+      process.env.NODE_ENV === "production"
+        ? ApolloServerPluginLandingPageProductionDefault()
+        : ApolloServerPluginLandingPageLocalDefault({ embed: false })
+    ]
   });
 
   await apolloServer.start();
