@@ -1,54 +1,50 @@
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
 const { ApolloServer } = require("apollo-server-express");
-// const { ApolloServerPluginLandingPageProductionDefault, ApolloServerPluginLandingPageLocalDefault } = require("@apollo/server/plugin/landingPage/default");
 const port = process.env.PORT || 3000;
-const { initDb } = require("./db/connection"); //importing database connection function
-const typeDefs = require("./typeDefs/typeDefs"); // import the merged schema
-const resolvers = require("./schemas/resolvers"); //for the Apollo Server
+const { initDb } = require("./db/connection");
+const schemas = require("./typeDefs/schemas"); // imports file of the resolvers and typesdefs
 
-//Start Apollo Server and GraphQL at /graphql
+// Start Apollo Server and GraphQL at /graphql
 async function startServer() {
-  // const plugins = [ ApolloServerPluginLandingPageProductionDefault({embed: true, persistedQueries: false})];
   const app = express();
-  const apolloServer = new ApolloServer({
-    typeDefs,
-    resolvers
-    // plugins
-  });
 
-  await apolloServer.start();
+  const server = new ApolloServer(schemas);
 
-  apolloServer.applyMiddleware({ app: app });
+  await server.start();
 
-  //middleware setup
+  server.applyMiddleware({ app, path: "/graphql" });
+
+  // middleware setup
   app
     .use(cors())
     .use(express.json())
-    //   .use("/", require("./routes"))
     .use((req, res, next) => {
-      //custom middleware to set headers for cors and content type
-      res.setHeader("Access-Control-Allow-Origin", "*"); //allow requests from any origin
+      // custom middleware to set headers for CORS and content type
+      res.setHeader("Access-Control-Allow-Origin", "*"); // allow requests from any origin
       res.setHeader(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept, Z-Key"
-      ); // define allowed headers
-      res.setHeader("Content-Type", "application/json"); //set response content type to JSON
+      ); // Define allowed headers
+      res.setHeader("Content-Type", "application/json"); // set response content type to JSON
       next();
     });
 
   app.listen(port, () => {
     console.log(`🚀 Web Server is listening at port ${port}`);
+    console.log(`GraphQL API available at http://localhost:${port}/graphql`);
   });
 }
-startServer();
 
-// initialize db connection
+// Initialize db connection
 initDb((err) => {
   if (err) {
     console.error("Error connecting to the database:", err);
   } else {
-    //log successful db connection
     console.log("Connected to MongoDB");
+    // Start the Apollo Server after successful DB connection
+    startServer().catch((error) => {
+      console.error("Error starting server:", error);
+    });
   }
 });
