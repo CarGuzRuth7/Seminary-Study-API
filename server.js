@@ -12,11 +12,6 @@ const {
 const port = process.env.PORT || 3000;
 const { initDb } = require("./db/connection");
 const { schema, typeDefs } = require("./schemas/schema"); // imports file of the resolvers and typesdefs
-const {
-  ApolloServerPluginLandingPageLocalDefault,
-
-  ApolloServerPluginLandingPageProductionDefault
-} = require("@apollo/server/plugin/landingPage/default");
 
 // Start Apollo Server and GraphQL at /graphql
 async function startServer() {
