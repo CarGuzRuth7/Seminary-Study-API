@@ -1,19 +1,31 @@
 const express = require("express");
 const cors = require("cors");
-const { ApolloServer } = require("apollo-server-express");
+const { ApolloServer } = require("@apollo/server");
+const { expressMiddleware } = require("@apollo/server/express4");
 const port = process.env.PORT || 3000;
 const { initDb } = require("./db/connection");
-const schemas = require("./typeDefs/schemas"); // imports file of the resolvers and typesdefs
+const { schema, typeDefs } = require("./schemas/schema"); // imports file of the resolvers and typesdefs
+const {
+  ApolloServerPluginLandingPageLocalDefault,
+
+  ApolloServerPluginLandingPageProductionDefault
+} = require("@apollo/server/plugin/landingPage/default");
 
 // Start Apollo Server and GraphQL at /graphql
 async function startServer() {
   const app = express();
+  const apolloServer = new ApolloServer({
+    schema,
+    typeDefs,
+    introspection: true,
+    plugins: [
+      process.env.NODE_ENV === "production"
+        ? ApolloServerPluginLandingPageProductionDefault({ embed: true })
+        : ApolloServerPluginLandingPageLocalDefault({ embed: false })
+    ] });
+  await apolloServer.start();
 
-  const server = new ApolloServer(schemas);
-
-  await server.start();
-
-  server.applyMiddleware({ app, path: "/graphql" });
+  app.use("/graphql", cors(), express.json(), expressMiddleware(apolloServer));
 
   // middleware setup
   app

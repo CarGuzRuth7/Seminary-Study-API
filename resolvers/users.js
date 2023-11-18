@@ -1,22 +1,3 @@
-//graphql resolvers functions
-const activities = require("../activities.json"); //testing with json file, need to add db implementation
-
-const activitiesResolvers = {
-  Query: {
-    challenges: () => activities,
-    challenge: (_, { challengeName }) =>
-      activities.find((challenge) => challenge.challengeName === challengeName)
-  },
-  Mutation: {
-    submit: (_, { challengeName }) => {
-      return `Submission for ${challengeName} received`;
-    },
-    deleteChallenge: (_, { challengeName }) => {
-      return `Deleted challenge: ${challengeName}`;
-    }
-  }
-};
-
 // for testing
 const users = [
   {
@@ -63,4 +44,4 @@ const userResolvers = {
   }
 };
 
-module.exports = { activitiesResolvers, userResolvers };
+module.exports = userResolvers;

@@ -1,20 +1,22 @@
-const { mergeTypeDefs } = require("@graphql-tools/merge");
-const { mergeResolvers } = require("@graphql-tools/merge");
+const { makeExecutableSchema } = require("@graphql-tools/schema");
+const usersTypeDefs = require("./users");
+// const quotesTypeDefs = require("./quotes");
+const challengesTypeDefs = require("./challenges");
+const usersResolvers = require("../resolvers/users");
 
-// importing type definitions
-const challengeTypeDefs = require("../typeDefs/challengeTypeDefs");
-const userTypeDefs = require("../typeDefs/userTypeDefs");
+// const quotesResolvers = require("./resolvers/quotes");
+const challengesResolvers = require("../resolvers/challenges");
 
-// importing resolvers
-const { activitiesResolvers, userResolvers } = require("./resolvers");
+const mergedTypeDefs = [usersTypeDefs, challengesTypeDefs];
 
-// Mmrge type definitions
-const mergedTypeDefs = mergeTypeDefs([challengeTypeDefs, userTypeDefs]);
+const mergedResolvers = [usersResolvers, challengesResolvers];
 
-// merge resolvers
-const mergedResolvers = mergeResolvers([activitiesResolvers, userResolvers]);
-
-module.exports = {
+const schema = makeExecutableSchema({
   typeDefs: mergedTypeDefs,
   resolvers: mergedResolvers
+});
+
+module.exports = {
+  schema, // Export the schema itself
+  typeDefs: mergedTypeDefs // Export the typeDefs separately
 };
