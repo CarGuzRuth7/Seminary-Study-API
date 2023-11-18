@@ -1,15 +1,16 @@
 const { makeExecutableSchema } = require("@graphql-tools/schema");
 const usersTypeDefs = require("./users");
-// const quotesTypeDefs = require("./quotes");
-const challengesTypeDefs = require("./challenges");
 const usersResolvers = require("../resolvers/users");
 
-// const quotesResolvers = require("./resolvers/quotes");
+const quotesTypeDefs = require("./quotes");
+const quotesResolvers = require("../resolvers/quotes");
+
+const challengesTypeDefs = require("./challenges");
 const challengesResolvers = require("../resolvers/challenges");
 
-const mergedTypeDefs = [usersTypeDefs, challengesTypeDefs];
+const mergedTypeDefs = [usersTypeDefs, challengesTypeDefs, quotesTypeDefs];
 
-const mergedResolvers = [usersResolvers, challengesResolvers];
+const mergedResolvers = [usersResolvers, challengesResolvers, quotesResolvers];
 
 const schema = makeExecutableSchema({
   typeDefs: mergedTypeDefs,
