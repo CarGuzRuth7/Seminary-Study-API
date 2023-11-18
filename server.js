@@ -20,7 +20,7 @@ async function startServer() {
     resolvers,
     plugins: [
       process.env.NODE_ENV === "production"
-        ? ApolloServerPluginLandingPageProductionDefault()
+        ? ApolloServerPluginLandingPageProductionDefault({embed: true})
         : ApolloServerPluginLandingPageLocalDefault({ embed: false })
     ]
   });
