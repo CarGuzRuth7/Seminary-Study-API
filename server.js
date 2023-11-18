@@ -22,7 +22,8 @@ async function startServer() {
       process.env.NODE_ENV === "production"
         ? ApolloServerPluginLandingPageProductionDefault({ embed: true })
         : ApolloServerPluginLandingPageLocalDefault({ embed: false })
-    ] });
+    ]
+  });
   await apolloServer.start();
 
   app.use("/graphql", cors(), express.json(), expressMiddleware(apolloServer));
