@@ -18,6 +18,7 @@ async function startServer() {
   const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,
+    introspection: true,
     plugins: [
       process.env.NODE_ENV === "production"
         ? ApolloServerPluginLandingPageProductionDefault({embed: true})
