@@ -1,6 +1,7 @@
 const express = require("express");
 var cors = require("cors");
 const { ApolloServer } = require("apollo-server-express");
+const { ApolloServerPluginLandingPageProductionDefault, ApolloServerPluginLandingPageLocalDefault } = require("@apollo/server/plugin/landingPage/default");
 const port = process.env.PORT || 3000;
 const { initDb } = require("./db/connection"); //importing database connection function
 const typeDefs = require("./schemas/typeDefs"); //importing types definitions and resolvers
@@ -8,10 +9,12 @@ const resolvers = require("./schemas/resolvers"); //for the Apollo Server
 
 //Start Apollo Server and GraphQL at /graphql
 async function startServer() {
+  const plugins = [ ApolloServerPluginLandingPageProductionDefault({embed: true, persistedQueries: false})];
   const app = express();
   const apolloServer = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    plugins
   });
 
   await apolloServer.start();
