@@ -2,7 +2,7 @@ const { gql } = require("apollo-server-express");
 
 const userTypeDefs = gql`
   """
-  Represents a user in the system.
+  Represents a user in the db.
   """
   type User {
     username: String!
