@@ -1,19 +1,30 @@
 const { makeExecutableSchema } = require("@graphql-tools/schema");
+// users
 const usersTypeDefs = require("./users");
-// const quotesTypeDefs = require("./quotes");
-const challengesTypeDefs = require("./challenges");
-const docMasteryTypeDefs = require("./doctrinalMastery");
-const adminTypeDefs = require("./admin");
 const usersResolvers = require("../resolvers/users");
 
-// const quotesResolvers = require("./resolvers/quotes");
-const challengesResolvers = require("../resolvers/challenges");
+//doctrinal mastery
+const docMasteryTypeDefs = require("./doctrinalMastery");
 const docMasteryResolvers = require("../resolvers/doctrinalMastery");
+
+//admin
+const adminTypeDefs = require("./admin");
 const adminResolvers = require("../resolvers/admin");
 
-const mergedTypeDefs = [usersTypeDefs, challengesTypeDefs, docMasteryTypeDefs, adminTypeDefs];
+// quotes
+const quotesTypeDefs = require("./quotes");
+const quotesResolvers = require("../resolvers/quotes");
+// challenges
+const challengesTypeDefs = require("./challenges");
+const challengesResolvers = require("../resolvers/challenges");
 
-const mergedResolvers = [usersResolvers, challengesResolvers, docMasteryResolvers, adminResolvers];
+// books
+const booksTypeDefs = require("./books");
+const booksResolvers = require("../resolvers/books");
+
+// merge typeDefs and resolvers
+const mergedTypeDefs = [usersTypeDefs, challengesTypeDefs, docMasteryTypeDefs, adminTypeDefs, quotesTypeDefs, booksTypeDefs];
+const mergedResolvers = [usersResolvers, challengesResolvers, docMasteryResolvers, adminResolvers, quotesResolvers, booksResolvers];
 
 const schema = makeExecutableSchema({
   typeDefs: mergedTypeDefs,
@@ -21,6 +32,6 @@ const schema = makeExecutableSchema({
 });
 
 module.exports = {
-  schema, // Export the schema itself
-  typeDefs: mergedTypeDefs // Export the typeDefs separately
+  schema, // export the schema itself
+  typeDefs: mergedTypeDefs // export the typeDefs separately
 };
