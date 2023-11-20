@@ -22,7 +22,7 @@ async function startServer() {
     introspection: true,
     plugins: [
       process.env.NODE_ENV === "production"
-        ? ApolloServerPluginLandingPageProductionDefault({ embed: true})
+        ? ApolloServerPluginLandingPageProductionDefault({ embed: true })
         : ApolloServerPluginLandingPageLocalDefault({ embed: false })
     ]
   });
@@ -44,6 +44,8 @@ async function startServer() {
       res.setHeader("Content-Type", "application/json"); // set response content type to JSON
       next();
     });
+
+  process.on("warning", (e) => console.warn(e.stack));
 
   app.listen(port, () => {
     console.log(`🚀 Web Server is listening at port ${port}`);
