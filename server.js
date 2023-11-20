@@ -45,6 +45,8 @@ async function startServer() {
       next();
     });
 
+  process.on("warning", (e) => console.warn(e.stack));
+
   app.listen(port, () => {
     console.log(`🚀 Web Server is listening at port ${port}`);
     console.log(`GraphQL doc available at http://localhost:${port}/graphql`);
