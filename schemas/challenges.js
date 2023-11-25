@@ -10,6 +10,15 @@ const challengeTypeDefs = gql`
     difficulty: String!
     points: Int!
   }
+  """
+  Represents input for adding a new challenge in the db
+  """
+  input ChallengeInput {
+    challengeName: String!
+    description: String!
+    difficulty: String!
+    points: Int!
+  }
 
   """
   Queries related to challenges.
@@ -18,7 +27,7 @@ const challengeTypeDefs = gql`
     """
     Get a list of challenges.
     """
-    challenges: [Challenge]
+    getChallenges: [Challenge]
 
     """
     Get a specific challenge by its name.
@@ -39,6 +48,11 @@ const challengeTypeDefs = gql`
     Delete a challenge by its name.
     """
     deleteChallenge(challengeName: String!): String
+
+    """
+    Add a new challenge.
+    """
+    addChallenge(challengeInput: ChallengeInput!): Challenge
   }
 `;
 
