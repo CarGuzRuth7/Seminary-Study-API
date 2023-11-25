@@ -23,8 +23,22 @@ const booksTypeDefs = require("./books");
 const booksResolvers = require("../resolvers/books");
 
 // merge typeDefs and resolvers
-const mergedTypeDefs = [usersTypeDefs, challengesTypeDefs, docMasteryTypeDefs, adminTypeDefs, quotesTypeDefs, booksTypeDefs];
-const mergedResolvers = [usersResolvers, challengesResolvers, docMasteryResolvers, adminResolvers, quotesResolvers, booksResolvers];
+const mergedTypeDefs = [
+  usersTypeDefs,
+  challengesTypeDefs,
+  docMasteryTypeDefs,
+  adminTypeDefs,
+  quotesTypeDefs,
+  booksTypeDefs
+];
+const mergedResolvers = [
+  usersResolvers,
+  challengesResolvers,
+  docMasteryResolvers,
+  adminResolvers,
+  quotesResolvers,
+  booksResolvers
+];
 
 const schema = makeExecutableSchema({
   typeDefs: mergedTypeDefs,
