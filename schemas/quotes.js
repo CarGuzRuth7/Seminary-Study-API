@@ -10,16 +10,16 @@ const quoteTypeDefs = gql`
     author: String!
   }
 
-  extend type Query {
+  type Query {
     """
-    Retrieve all quotes. (Not implemented yet)
+    Retrieve all quotes.
     """
-    getQuotes: [Quote!]!
+    getQuotes: [Quote]
 
     """
     Retrieve a quote by ID. (Not implemented yet)
     """
-    getQuote(id: ID!): Quote
+    getQuoteById(id: ID!): Quote
   }
 
   extend type Mutation {
