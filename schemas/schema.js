@@ -18,9 +18,9 @@ const quotesResolvers = require("../resolvers/quotes");
 const challengesTypeDefs = require("./challenges");
 const challengesResolvers = require("../resolvers/challenges");
 
-// books
-const booksTypeDefs = require("./books");
-const booksResolvers = require("../resolvers/books");
+// scriptures
+const scripturesTypeDefs = require("./scriptures");
+const scripturesResolvers = require("../resolvers/scriptures");
 
 // merge typeDefs and resolvers
 const mergedTypeDefs = [
@@ -29,7 +29,7 @@ const mergedTypeDefs = [
   docMasteryTypeDefs,
   adminTypeDefs,
   quotesTypeDefs,
-  booksTypeDefs
+  scripturesTypeDefs
 ];
 const mergedResolvers = [
   usersResolvers,
@@ -37,7 +37,7 @@ const mergedResolvers = [
   docMasteryResolvers,
   adminResolvers,
   quotesResolvers,
-  booksResolvers
+  scripturesResolvers
 ];
 
 const schema = makeExecutableSchema({
