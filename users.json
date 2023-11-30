@@ -1,0 +1,100 @@
+[
+  {
+    "username": "moroni_bom",
+    "email": "moroni@example.com",
+    "firstName": "Moroni",
+    "lastName": "Bookofmormon",
+    "user_id": "auth0|1920212223"
+  },
+  {
+    "username": "brigham_young",
+    "email": "brigham@example.com",
+    "firstName": "Brigham",
+    "lastName": "Young",
+    "user_id": "auth0|8121619202"
+  },
+  {
+    "username": "abraham_lincoln",
+    "email": "abraham@example.com",
+    "firstName": "Abraham",
+    "lastName": "Lincoln",
+    "user_id": "auth0|2468101214"
+  },
+  {
+    "username": "esther_bible",
+    "email": "esther@example.com",
+    "firstName": "Esther",
+    "lastName": "Bible",
+    "user_id": "auth0|3691215180"
+  },
+  {
+    "username": "moses_prophet",
+    "email": "moses@example.com",
+    "firstName": "Moses",
+    "lastName": "Prophet",
+    "user_id": "auth0|4857609291"
+  },
+  {
+    "username": "nephi_bookofmormon",
+    "email": "nephi@example.com",
+    "firstName": "Nephi",
+    "lastName": "Bookofmormon",
+    "user_id": "auth0|5901234567"
+  },
+  {
+    "username": "abigail_adams",
+    "email": "abigail@example.com",
+    "firstName": "Abigail",
+    "lastName": "Adams",
+    "user_id": "auth0|6071829345"
+  },
+  {
+    "username": "isaac_newton",
+    "email": "isaac@example.com",
+    "firstName": "Isaac",
+    "lastName": "Newton",
+    "user_id": "auth0|7111317192"
+  },
+  {
+    "username": "abraham_bible",
+    "email": "abraham2@example.com",
+    "firstName": "Abraham",
+    "lastName": "Bible",
+    "user_id": "auth0|9142223242"
+  },
+  {
+    "username": "eve_bible",
+    "email": "eve@example.com",
+    "firstName": "Eve",
+    "lastName": "Bible",
+    "user_id": "auth0|1011121314"
+  },
+  {
+    "username": "joseph_smith",
+    "email": "joseph@example.com",
+    "firstName": "Joseph",
+    "lastName": "Smith",
+    "user_id": "auth0|1112131415"
+  },
+  {
+    "username": "paul_apostle",
+    "email": "paul@example.com",
+    "firstName": "Paul",
+    "lastName": "Apostle",
+    "user_id": "auth0|1314151617"
+  },
+  {
+    "username": "lehi_bookofmormon",
+    "email": "lehi@example.com",
+    "firstName": "Lehi",
+    "lastName": "Bookofmormon",
+    "user_id": "auth0|1415161718"
+  },
+  {
+    "username": "saraltr",
+    "email": "saralatorre.sl@live.fr",
+    "firstName": "Sara",
+    "lastName": "Latorre",
+    "user_id": "auth0|656863faf1709c28d37c458b"
+  }
+]

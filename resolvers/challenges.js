@@ -31,17 +31,13 @@ const challengesResolvers = {
           difficulty: challengeInput.difficulty,
           points: challengeInput.points
         };
+        console.log(newChallenge);
 
         const result = await activitiesCollection.insertOne(newChallenge);
-
         if (result.acknowledged) {
           const insertedId = result.insertedId;
-          // const insertedChallenge = await activitiesCollection.findOne({ _id: insertedId });
-          // console.log(insertedChallenge);
-          return {
-            success: true,
-            message: `Challenge added successfully. Inserted ID: ${insertedId}`
-          };
+          const insertedChallenge = await activitiesCollection.findOne({ _id: insertedId });
+          return insertedChallenge;
         } else {
           throw new Error("Failed to add challenge");
         }
