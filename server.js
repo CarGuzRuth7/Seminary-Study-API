@@ -33,6 +33,7 @@ async function startServer() {
   // middleware setup
   app
     .use(cors())
+    .use("/", require("./routes"))
     .use(express.json())
     .use((req, res, next) => {
       // custom middleware to set headers for CORS and content type
@@ -49,7 +50,7 @@ async function startServer() {
 
   app.listen(port, () => {
     console.log(`🚀 Web Server is listening at port ${port}`);
-    console.log(`GraphQL doc available at http://localhost:${port}/graphql`);
+    console.log(`📂 GraphQL doc available at http://localhost:${port}/graphql`);
   });
 }
 

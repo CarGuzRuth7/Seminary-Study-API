@@ -29,7 +29,7 @@ const scripturesDefs = gql`
     """
     Get scriptures by providing search input
     """
-    searchScriptures(searchTerm: String): [Scripture]!
+    searchScriptures(searchInput: String): [Scripture]!
   }
 `;
 
