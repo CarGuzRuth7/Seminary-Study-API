@@ -27,12 +27,7 @@ const docMasteryTypeDefs = gql`
     """
     Get a scripture by book, chapter and verse.
     """
-    getScripture(book: String!, chapter: Int!, verse: String!): Scriptures
-
-    """
-    Get a user's progress (Not implemented yet).
-    """
-    progress: User
+    getScripture(book: String, chapter: Int, verse: String): Scriptures
   }
 `;
 module.exports = docMasteryTypeDefs;
