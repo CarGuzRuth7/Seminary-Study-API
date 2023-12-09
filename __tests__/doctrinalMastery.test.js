@@ -1,5 +1,6 @@
 //const { schema, typeDefs } = require("../schemas/schema");
 //const { ApolloServer } = require("@apollo/server");
+
 const scriptures = require("../doctrinal_mastery.json");
 const request = require("supertest");
 const graphQLEndpoint = "http://localhost:3000/";
