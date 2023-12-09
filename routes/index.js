@@ -7,15 +7,15 @@ const customRoutes = {
   postLogoutRedirect: "/logout"
 };
 
-const getIdToken = (req) => {
-  if (req.oidc.isAuthenticated()) {
-    // If the user is logged in
-    const idToken = req.oidc.idToken; // extract idToken
-    return idToken;
-  } else {
-    throw new Error("User not authenticated or user data not available.");
-  }
-};
+// const getIdToken = (req) => {
+//   if (req.oidc.isAuthenticated()) {
+//     // If the user is logged in
+//     const idToken = req.oidc.idToken; // extract idToken
+//     return idToken;
+//   } else {
+//     throw new Error("User not authenticated or user data not available.");
+//   }
+// };
 
 // Apply authentication middleware with customRoutes as configuration
 router.use(auth(auth0Config, customRoutes));
@@ -25,17 +25,17 @@ router.get("/logout", (req, res) => res.send("Bye!"));
 router.get("/", async (req, res) => {
   requiresAuth();
   try {
-    const idToken = getIdToken(req);
+    // const idToken = getIdToken(req);
 
     if (req.oidc.isAuthenticated()) {
       // if the user is logged in
       const username = req.oidc.user.nickname;
-      if (idToken) {
+      // if (idToken) {
         res.status(200).json({
           status: "success",
           message: `Welcome, ${username}! You are logged in. This is your token: ${idToken}`
         });
-      }
+      // }
     } else {
       res.status(200).json({
         status: "success",
