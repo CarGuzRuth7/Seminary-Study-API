@@ -7,6 +7,12 @@ const userTypeDefs = gql`
   type User {
     username: String!
     email: String!
+    firstName: String!
+    lastName: String!
+  }
+  type AuthInfo {
+    isAuthenticated: Boolean
+    message: String
   }
 
   """
@@ -14,39 +20,18 @@ const userTypeDefs = gql`
   """
   type Query {
     """
-    Gets the user's login status (Not implemented yet).
-    """
-    login: String
-
-    """
-    Logs the user out (Not implemented yet).
-    """
-    logout: String
-
-    """
     Gets the user's profile (Not implemented yet).
     """
-    profile: User
+    AuthInfo: [AuthInfo]
 
     """
-    Gets a specific user by their username (Not implemented yet).
+    Gets users list.
     """
-    getUser(username: String!): User
-  }
-
-  """
-  Mutations related to users.
-  """
-  type Mutation {
+    getUsers: [User]
     """
-    Updates a user's information by their username (Not implemented yet).
+    Search for a user by username.
     """
-    updateUser(username: String!): User
-
-    """
-    Deletes a user by their username (Not implemented yet).
-    """
-    deleteUser(username: String!): String
+    searchUserByUsername(username: String!): User
   }
 `;
 

@@ -7,7 +7,7 @@ const quotesResolvers = {
       try {
         const quotesCollection = db.getDb().db("seminaryStudy").collection("quotes");
         const quotes = await quotesCollection.find({}).toArray();
-        console.log(quotes);
+        // console.log(quotes);
         return quotes;
       } catch (error) {
         throw new Error(`Error getting the quotes: ${error.message}`);

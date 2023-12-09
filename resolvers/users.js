@@ -1,47 +1,41 @@
-// for testing
-const users = [
-  {
-    username: "example_user",
-    email: "user@gmail.com"
-  }
-];
+const db = require("../db/connection");
+const { getToken } = require("../middlewares/getToken");
 
 const userResolvers = {
   Query: {
-    login: () => {
-      // placeholder for login functionality (Not implemented yet)
-      return "Login functionality not implemented";
+    getUsers: async () => {
+      const usersCollection = db.getDb().db("seminaryStudy").collection("users");
+      const users = await usersCollection.find({}).toArray();
+      return users;
     },
-    logout: () => {
-      // placeholder for logout functionality (Not implemented yet)
-      return "Logout functionality not implemented";
-    },
-    profile: () => {
-      // placeholder for fetching user profile (Not implemented yet)
-      // eslint-disable-next-line no-undef
-      return users[0]; // For demonstration, returning the first user from the array
-    },
-    getUser: (_, { username }) => {
-      // Placeholder for fetching a specific user by username (Not implemented yet)
-      // eslint-disable-next-line no-undef
-      return users.find((user) => user.username === username);
-    }
-  },
-  Mutation: {
-    updateUser: (_, { username }) => {
-      // Placeholder for updating user information (Not implemented yet)
-      return users.find((user) => user.username === username);
-    },
-    deleteUser: (_, { username }) => {
-      // Placeholder for deleting a user (Not implemented yet)
-      const userIndex = users.findIndex((user) => user.username === username);
-      if (userIndex !== -1) {
-        users.splice(userIndex, 1);
-        return `User ${username} deleted`;
+    AuthInfo: async () => {
+      try {
+        let isAuth = null;
+        const token = getToken();
+
+        if (token) {
+          isAuth = true;
+        }
+        const result = {
+          isAuthenticated: isAuth,
+          message: isAuth ? "User is authenticated" : "User is not authenticated"
+        };
+
+        return [result];
+      } catch (error) {
+        throw new Error("An error occurred while processing the token.");
       }
-      return `User ${username} not found`;
+    },
+    searchUserByUsername: async (_, { username }) => {
+      try {
+        const usersCollection = db.getDb().db("seminaryStudy").collection("users");
+        const user = await usersCollection.findOne({ username: username });
+
+        return user;
+      } catch (error) {
+        throw new Error("An error occurred while searching for the user.");
+      }
     }
   }
 };
-
 module.exports = userResolvers;
