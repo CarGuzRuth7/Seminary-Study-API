@@ -31,7 +31,7 @@ const challengesResolvers = {
           difficulty: challengeInput.difficulty,
           points: challengeInput.points
         };
-        console.log(newChallenge);
+        // console.log(newChallenge);
 
         const result = await activitiesCollection.insertOne(newChallenge);
         if (result.acknowledged) {
