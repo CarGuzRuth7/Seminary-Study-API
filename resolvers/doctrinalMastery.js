@@ -37,9 +37,6 @@ const docMasteryResolvers = {
       } catch (error) {
         throw new Error(`Could not get book list ${error.message}`);
       }
-    },
-    progress: () => {
-      return "Functionality not implemented yet";
     }
   }
 };
