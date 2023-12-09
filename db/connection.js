@@ -26,6 +26,17 @@ async function initDb(callback) {
   }
 }
 
+async function stopDb() {
+  try {
+    if (db) {
+      await MongoClient.close();
+      console.log("Database Closed");
+    }
+  } catch (err) {
+    console.log("Could not close DB connection");
+  }
+}
+
 // get the db connection
 function getDb() {
   // check if the db variable is not set
@@ -39,5 +50,6 @@ function getDb() {
 
 module.exports = {
   initDb,
-  getDb
+  getDb,
+  stopDb
 };
