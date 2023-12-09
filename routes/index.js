@@ -30,12 +30,10 @@ router.get("/", async (req, res) => {
     if (req.oidc.isAuthenticated()) {
       // if the user is logged in
       const username = req.oidc.user.nickname;
-      // if (idToken) {
-        res.status(200).json({
-          status: "success",
-          message: `Welcome, ${username}! You are logged in. This is your token: ${idToken}`
-        });
-      // }
+      res.status(200).json({
+        status: "success",
+        message: `Welcome, ${username}! You are logged in.`
+      });
     } else {
       res.status(200).json({
         status: "success",
@@ -48,17 +46,5 @@ router.get("/", async (req, res) => {
       .json({ status: "error", message: "An error occurred while processing your request." });
   }
 });
-
-router.post("/auth0/user-registration", (req, res) => {
-  const userDataFromAuth0 = req.body; // user data sent from Auth0
-  const userData = setStoredUserData(userDataFromAuth0, res);
-  return userData;
-});
-
-// Function to set the user data received from Auth0
-const setStoredUserData = (userData, res) => {
-  // Here, 'userData' is an object that you want to store in cookies
-  res.cookie("userData", userData, { maxAge: 86400000, httpOnly: true }); // 'userData' is the cookie name, adjust 'maxAge' as needed
-};
 
 module.exports = router;
