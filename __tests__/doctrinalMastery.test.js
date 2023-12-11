@@ -1,141 +1,152 @@
-//const { schema, typeDefs } = require("../schemas/schema");
-const db = require("../db/connection");
-//const { ApolloServer } = require("@apollo/server");
-// const scriptures = require("../doctrinal_mastery.json");
-// const request = require("supertest");
-// const graphQLEndpoint = "http://localhost:3000/";
-// const fs = require("fs");
-// const path = require("path");
 const { expect } = require("chai");
 const EasyGraphQLTester = require("easygraphql-tester");
-
+const sinon = require("sinon");
 const resolver = require("../resolvers/doctrinalMastery");
 const schemaCode = require("../schemas/doctrinalMastery");
+const connectionModule = require("../db/connection");
 
-describe("Test resolvers", () => {
-  let tester;
-  let database = null;
-  beforeAll(async () => {
-    tester = new EasyGraphQLTester(schemaCode, resolver);
-    database = await db.initDb((err) => {
-      if (err) {
-        console.error("Error connecting to the database:", err);
-      } else {
-        console.log("Connected to MongoDB");
-        return db.getDb();
-      }
-    });
+let tester;
+const dbStub = sinon.stub(connectionModule, "getDb");
+
+beforeAll(() => {
+  dbStub.returns({
+    db: () => ({
+      collection: () => ({
+        find: () => ({
+          toArray: () => [
+            {
+              book: "Moses",
+              chapter: 1,
+              verse: "39",
+              scripture: "For behold, this is my work and my glory—to bring to pass the immortality and eternal life of man.",
+              theme: "Old Testament"
+            },
+            {
+              book: "Moses",
+              chapter: 7,
+              verse: "18",
+              scripture: "And the Lord called his people Zion, because they were of one heart and one mind, and dwelt in righteousness; and there was no poor among them.",
+              theme: "Old Testament"
+            }
+          ]
+        })
+      })
+    })
   });
 
-  afterAll(async () => {
-    await db.stopDb();
-  });
-
-  it("returns all scriptures", async () => {
-    const allScriptures = `query GetScriptures {
-      getScripture {
-        scripture
-        book
-        chapter
-        verse
-        theme
-      }
-    }`;
-    //const arg = { book: "Alma", chapter: 36, verse: "3" };
-
-    const result = await tester.graphql(allScriptures, undefined, database);
-    console.log(result.data);
-    expect(undefined).to.be.an("undefined");
-    //expect(result.data).to.be.an("object");
-  });
+  tester = new EasyGraphQLTester(schemaCode, resolver);
 });
 
-// describe("get doc mastery resolvers", () => {
-//   const allScriptures = {
-//     query: `query GetScripture {
-//       getScriptures{
-//         scripture
-//         book
-//         chapter
-//         verses
-//         theme
-//       }
+describe("GraphQL Resolvers", () => {
+  it("should return scriptures list", async () => {
+    const query = `
+      {
+        scriptures {
+          book
+          chapter
+          verse
+          scripture
+          theme
+        }
+      }
+    `;
 
-//     }`
-//   };
+    try {
+      const result = await tester.graphql(query);
+      expect(result.data.scriptures).to.be.an("array");
+    } catch (error) {
+      throw error;
+    }
+  });
 
-//   const getBook = {
-//     query: `query GetScripture($book: String!) {
-//       getBook(book: $book) {
-//         scripture
-//       }
-//     }`,
-//     variables: {
-//       book: "Moses"
-//     }
-//   };
+  it("should return a scripture by book", async () => {
+    const query = `
+      query GetBook($book: String!) {
+        getBook(book: $book) {
+          book
+          chapter
+          verse
+          scripture
+          theme
+        }
+      }
+    `;
 
-//   const getScripture = {
-//     query: `query GetScripture($book: String!, $chapter: Int!, $verse: String!) {
-//       getScripture(book: $book, chapter: $chapter, verse: $verse) {
-//         book
-//         chapter
-//         verse
-//         scripture
-//       }
-//     }`,
-//     variables: { book: "Abraham", chapter: 2, verse: "9-11" }
-//   };
+    const variables = { book: "Moses" };
 
-//   it("returns all scriptures", async () => {
-//     //called instance of server
-//     // const testServer = new ApolloServer({
-//     //   schema,
-//     //   typeDefs
-//     // });
+    try {
+      const result = await tester.graphql(query, {}, variables);
+      expect(result.data.getBook).to.exist;
+    } catch (error) {
+      throw error;
+    }
+  });
 
-//     //called resolver to test
-//     // const resolver = await testServer.executeOperation(allScriptures);
-//     // expect(resolver.body.singleResult).toEqual(scriptures);
+  it("should return a scripture by book, chapter, and verse", async () => {
+    const query = `
+      query GetScripture($book: String, $chapter: Int, $verse: String) {
+        getScripture(book: $book, chapter: $chapter, verse: $verse) {
+          book
+          chapter
+          verse
+          scripture
+          theme
+        }
+      }
+    `;
 
-//     request(graphQLEndpoint)
-//       .post("?")
-//       .send(allScriptures)
-//       .expect(200)
-//       .end((error, response) => {
-//         //if (error) console.error(error);
+    const variables = {
+      book: "Moses",
+      chapter: 1,
+      verse: "39"
+    };
 
-//         const res = JSON.parse(response);
+    try {
+      const result = await tester.graphql(query, {}, variables);
+      expect(result.data.getScripture).to.exist;
+    } catch (error) {
+      throw error;
+    }
+  });
 
-//         expect(res.data.scriptures).toEqual(scriptures);
-//       });
-//   });
+  it("should handle error when fetching a scripture by non-existing book", async () => {
+    const query = `
+      query GetScripture($book: String, $chapter: Int, $verse: String) {
+        getScripture(book: $book, chapter: $chapter, verse: $verse) {
+          book
+          chapter
+          verse
+          scripture
+          theme
+        }
+      }
+    `;
 
-//   it("returns a single book", async () => {
-//     request(graphQLEndpoint)
-//       .post("?")
-//       .send(getBook)
-//       .expect(200)
-//       .end((error, response) => {
-//         if (error) console.error(error);
+    const variables = {
+      book: "InvalidBook",
+      chapter: 1,
+      verse: "1"
+    };
 
-//         const res = JSON.parse(response);
+    try {
+      await tester.graphql(query, {}, variables);
+      // If it reaches here without throwing an error, the test failed
+      throw new Error("Expected an error but received success.");
+    } catch (error) {
+      expect(error.message).to.equal("Could not get book list Book 'InvalidBook' not found.");
+    }
+  });
 
-//         expect(res.data.scriptures).toEqual(scriptures);
-//       });
-//   });
+    const variables = { book: "John" };
 
-//   it("returns a scripture", async () => {
-//     request(graphQLEndpoint)
-//       .post("?")
-//       .send(getScripture)
-//       .expect(200)
-//       .end((error, response) => {
-//         if (error) console.error(error);
+    try {
+      await tester.graphql(query, {}, variables);
+      throw new Error("Expected an error but received success.");
+    } catch (error) {
+      expect(error.message).to.equal("Could not get book list Book 'John' not found.");
+    }
+  });
 
-//         const res = JSON.parse(response);
-
-//         expect(res.data.scriptures).toEqual(scriptures);
-//       });
-//   });
-//});
+afterAll(() => {
+  dbStub.restore();
+});
