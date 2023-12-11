@@ -32,7 +32,7 @@ const challengeTypeDefs = gql`
     """
     Get a specific challenge by its name.
     """
-    challenge(challengeName: String!): Challenge
+    getChallengeByName(challengeName: String!): Challenge!
   }
 
   """

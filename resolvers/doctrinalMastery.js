@@ -1,4 +1,3 @@
-//const scriptures = require("../doctrinal_mastery.json"); //testing with json file, need to add db implementation
 const db = require("../db/connection");
 
 const docMasteryResolvers = {

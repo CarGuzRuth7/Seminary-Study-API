@@ -11,7 +11,7 @@ const challengesResolvers = {
         throw new Error(`Error fetching challenges: ${error.message}`);
       }
     },
-    challenge: async (_, { challengeName }) => {
+    getChallengeByName: async (_, { challengeName }) => {
       try {
         const activitiesCollection = db.getDb().db("seminaryStudy").collection("activities");
         const challenge = await activitiesCollection.findOne({ challengeName });
