@@ -17,26 +17,26 @@ const quoteTypeDefs = gql`
     getQuotes: [Quote]
 
     """
-    Retrieve a quote by ID. (Not implemented yet)
+    Retrieve a quote by ID.
     """
     getQuoteById(id: ID!): Quote
   }
 
   extend type Mutation {
     """
-    Create a new quote. (Not implemented yet)
+    Create a new quote.
     """
-    createQuote(content: String!, author: String!): Quote!
+    addQuote(content: String!, author: String!): Quote!
 
     """
-    Update an existing quote by ID. (Not implemented yet)
+    Update an existing quote by ID.
     """
     updateQuote(id: ID!, content: String!, author: String!): Quote!
 
     """
-    Delete a quote by ID. (Not implemented yet)
+    Delete a quote by ID.
     """
-    deleteQuote(id: ID!): Quote
+    deleteQuote(id: ID!): String
   }
 `;
 

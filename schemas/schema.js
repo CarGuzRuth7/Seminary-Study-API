@@ -7,10 +7,6 @@ const usersResolvers = require("../resolvers/users");
 const docMasteryTypeDefs = require("./doctrinalMastery");
 const docMasteryResolvers = require("../resolvers/doctrinalMastery");
 
-//admin
-const adminTypeDefs = require("./admin");
-const adminResolvers = require("../resolvers/admin");
-
 // quotes
 const quotesTypeDefs = require("./quotes");
 const quotesResolvers = require("../resolvers/quotes");
@@ -27,7 +23,6 @@ const mergedTypeDefs = [
   usersTypeDefs,
   challengesTypeDefs,
   docMasteryTypeDefs,
-  adminTypeDefs,
   quotesTypeDefs,
   scripturesTypeDefs
 ];
@@ -35,7 +30,6 @@ const mergedResolvers = [
   usersResolvers,
   challengesResolvers,
   docMasteryResolvers,
-  adminResolvers,
   quotesResolvers,
   scripturesResolvers
 ];

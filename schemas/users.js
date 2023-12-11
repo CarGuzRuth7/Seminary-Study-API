@@ -11,8 +11,8 @@ const userTypeDefs = gql`
     lastName: String!
   }
   type AuthInfo {
-    isAuthenticated: Boolean
-    message: String
+    isAuthenticated: Boolean!
+    message: String!
   }
 
   """
@@ -20,7 +20,7 @@ const userTypeDefs = gql`
   """
   type Query {
     """
-    Gets the user's profile (Not implemented yet).
+    Gets the user's authentification status.
     """
     AuthInfo: [AuthInfo]
 
