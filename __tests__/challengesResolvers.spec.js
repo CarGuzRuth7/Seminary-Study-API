@@ -46,5 +46,4 @@ describe("Challenges Resolvers", () => {
     });
     expect(result).toBe("Submission for Some Challenge received");
   });
-
 });
