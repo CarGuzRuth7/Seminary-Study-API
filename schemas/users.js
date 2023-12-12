@@ -10,6 +10,9 @@ const userTypeDefs = gql`
     firstName: String!
     lastName: String!
   }
+  """
+  Gets the user authentification state using the acess token given by Auth0
+  """
   type AuthInfo {
     isAuthenticated: Boolean!
     message: String!
