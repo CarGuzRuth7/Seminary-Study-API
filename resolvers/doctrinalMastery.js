@@ -16,6 +16,9 @@ const docMasteryResolvers = {
     },
     getBook: async (_, { book }) => {
       try {
+        if (!book || typeof book !== "string") {
+          throw new Error("Book name is required and should be a string");
+        }
         return await db
           .getDb()
           .db("seminaryStudy")
@@ -28,6 +31,18 @@ const docMasteryResolvers = {
 
     getScripture: async (_, { book, chapter, verse }) => {
       try {
+        if (
+          !book ||
+          typeof book !== "string" ||
+          !chapter ||
+          typeof chapter !== "number" ||
+          !Number.isInteger(chapter) ||
+          chapter < 1 ||
+          !verse ||
+          typeof verse !== "string"
+        ) {
+          throw new Error("Invalid input for book, chapter, or verse");
+        }
         return await db
           .getDb()
           .db("seminaryStudy")

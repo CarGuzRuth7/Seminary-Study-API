@@ -27,6 +27,9 @@ const userResolvers = {
       }
     },
     searchUserByUsername: async (_, { username }) => {
+      if (!username || typeof username !== "string") {
+        throw new Error("Invalid username. Please provide a valid string.");
+      }
       try {
         const usersCollection = db.getDb().db("seminaryStudy").collection("users");
         const user = await usersCollection.findOne({ username: username });

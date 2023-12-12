@@ -36,6 +36,9 @@ const resolvers = {
   Mutation: {
     addQuote: async (_, { content, author }) => {
       try {
+        if (!content || typeof content !== "string" || !author || typeof author !== "string") {
+          throw new Error("Content and author are required and should be strings");
+        }
         const quotesCollection = db.getDb().db("seminaryStudy").collection("quotes");
         const result = await quotesCollection.insertOne({ content, author });
         const createdQuote = await quotesCollection.findOne({ _id: result.insertedId });
@@ -51,6 +54,20 @@ const resolvers = {
     },
     updateQuote: async (_, { id, content, author }) => {
       try {
+        // validate content, author, and mongodb ID before updating a quote
+        if (!ObjectId.isValid(id)) {
+          throw new Error("Invalid ID: ID should be be a 24 character hex string.");
+        }
+        if (!id || typeof id !== "string") {
+          throw new Error("ID should be a non-empty string");
+        }
+        if (!content || typeof content !== "string") {
+          throw new Error("Content should be a non-empty string");
+        }
+        if (!author || typeof author !== "string") {
+          throw new Error("Author should be a non-empty string");
+        }
+
         const quotesCollection = db.getDb().db("seminaryStudy").collection("quotes");
         const objectId = new ObjectId(id);
         const updatedQuote = await quotesCollection.findOneAndUpdate(
@@ -74,6 +91,12 @@ const resolvers = {
     },
     deleteQuote: async (_, { id }) => {
       try {
+        if (!ObjectId.isValid(id)) {
+          throw new Error("Invalid ID: ID should be be a 24 character hex string.");
+        }
+        if (!id || typeof id !== "string") {
+          throw new Error("ID should be a non-empty string");
+        }
         const quotesCollection = db.getDb().db("seminaryStudy").collection("quotes");
         const deletedQuote = await quotesCollection.findOneAndDelete({ _id: new ObjectId(id) });
 
